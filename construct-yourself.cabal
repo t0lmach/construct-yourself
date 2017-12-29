@@ -68,7 +68,7 @@ test-suite parser-test
 test-suite task1-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
-  main-is:             Task1Spec.hs
+  main-is:             SimpleTypeTheorySpec.hs
   build-depends:       base
                      , construct-yourself
                      , QuickCheck

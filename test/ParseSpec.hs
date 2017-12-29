@@ -37,18 +37,18 @@ parserTest = do
     check termP "(x (x1 x2))" app3
     check termP "((x x1) x2)" app4
     
-  it "should test lam parser" $ do
-    let lam1 = Lam "x" varX
-        lam2 = Lam "x" varX1
-        lam3 = Lam "x" (App varX varX1)  
-    check termP "(\\x.x)" lam1
-    check termP "(\\x.x1)" lam2
-    check termP "(\\x.(x x1))" lam3
-    check termP "((\\x.x) x1)" combined1
+  -- it "should test lam parser" $ do
+  --   let lam1 = Lam "x" varX
+  --       lam2 = Lam "x" varX1
+  --       lam3 = Lam "x" (App varX varX1)  
+  --   check termP "(\\x.x)" lam1
+  --   check termP "(\\x.x1)" lam2
+  --   check termP "(\\x.(x x1))" lam3
+  --   check termP "((\\x.x) x1)" combined1
 
-  it "should test bracket parser" $ do
-    check termP "((\\x.x)  (x1))" combined1 
-    check termP "((((\\x2.((\\x.x) x1)))))" combined2
+  -- it "should test bracket parser" $ do
+  --   check termP "((\\x.x)  (x1))" combined1 
+  --   check termP "((((\\x2.((\\x.x) x1)))))" combined2
 
 check :: (Eq a, Show a) => Parser a -> Text -> a -> Expectation
 check parser inputStr result =
